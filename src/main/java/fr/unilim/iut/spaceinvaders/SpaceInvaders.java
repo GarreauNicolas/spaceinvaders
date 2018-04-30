@@ -12,13 +12,13 @@ public class SpaceInvaders {
 	
 	  @Override
 	    public String toString() {
-	        String s = "";
+	        String espaceDeJeux = "";
 	        for (int i = 0; i < hauteur; i++) {
 	            for (int j = 0; j < longueur; j++) {
-	                s += ".";
+	                espaceDeJeux += ".";
 	            }
-	            s += "\n";
+	            espaceDeJeux += "\n";
 	        }
-	        return s;
+	        return espaceDeJeux;
 	    }
 }
