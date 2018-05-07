@@ -23,14 +23,25 @@ public class SpaceInvaders {
 		StringBuilder espaceDeJeu = new StringBuilder();
 		for (int y = 0; y < hauteur; y++) {
 			for (int x = 0; x < longueur; x++) {
-				if (this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y))
-					espaceDeJeu.append('V');
-				else
-					espaceDeJeu.append('.');
+				espaceDeJeu.append(recupererMarqueDeLaPosition(x, y));
+			
 			}
 			espaceDeJeu.append('\n');
 		}
 		return espaceDeJeu.toString();
+	}
+
+
+
+
+
+	private char recupererMarqueDeLaPosition(int x, int y) {
+		char marque;
+		if (this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y))
+			marque='V';
+		else
+			marque='.';
+		return marque;
 	}
 
 	private boolean aUnVaisseau() {
