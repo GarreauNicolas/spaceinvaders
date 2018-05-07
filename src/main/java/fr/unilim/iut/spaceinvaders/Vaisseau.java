@@ -2,6 +2,7 @@ package fr.unilim.iut.spaceinvaders;
 
 public class Vaisseau {
 
+
 	int x;
 	int y;
 
@@ -15,5 +16,6 @@ public class Vaisseau {
 	}
 
 }
+
 
 

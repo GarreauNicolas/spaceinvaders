@@ -38,6 +38,4 @@ public class SpaceInvadersTest {
 		"...............\n" + 
 		".......V.......\n" , spaceinvaders.toString());
 	}
-
-   }
-
+}
