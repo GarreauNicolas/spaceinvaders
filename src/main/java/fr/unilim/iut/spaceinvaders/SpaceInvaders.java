@@ -2,9 +2,11 @@ package fr.unilim.iut.spaceinvaders;
 
 public class SpaceInvaders {
 
+
 	int longueur;
 	int hauteur;
 	Vaisseau vaisseau;
+
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -12,8 +14,8 @@ public class SpaceInvaders {
 	}
 
 
-
-	@Override
+    
+    @Override
 	public String toString() {
 		StringBuilder espaceDeJeu = new StringBuilder();
 		for (int y = 0; y < hauteur; y++) {
