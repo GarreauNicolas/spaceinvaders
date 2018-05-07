@@ -13,18 +13,16 @@ public class SpaceInvaders {
 		this.hauteur = hauteur;
 	}
 
+    @Override
 
-
-
-
-	@Override
 
 	public String toString() {
 		StringBuilder espaceDeJeu = new StringBuilder();
 		for (int y = 0; y < hauteur; y++) {
+
 			for (int x = 0; x < longueur; x++) {
 				espaceDeJeu.append(recupererMarqueDeLaPosition(x, y));
-			
+
 			}
 			espaceDeJeu.append('\n');
 		}
@@ -32,16 +30,18 @@ public class SpaceInvaders {
 	}
 
 
-
-
-
 	private char recupererMarqueDeLaPosition(int x, int y) {
 		char marque;
-		if (this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y))
-			marque='V';
+		if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
+		      marque='V';
 		else
-			marque='.';
+		      marque='.';
 		return marque;
+	}
+
+	private boolean aUnVaisseauQuiOccupeLaPosition(int x, int y) {
+		return this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y);
+
 	}
 
 	private boolean aUnVaisseau() {
