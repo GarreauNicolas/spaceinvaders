@@ -34,28 +34,7 @@ public class SpaceInvadersTest {
 	    "...............\n" + 
 	    "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
         }
-   
-   @Test
-	public void test_unNouveauVaisseauEstCorrectementPositionneDansEspaceJeu() {
-		SpaceInvaders spaceinvaders = new SpaceInvaders(15, 10);
-		spaceinvaders.positionnerUnNouveauVaisseau(7,9);
-		assertEquals("" + 
-		"...............\n" + 
-		"...............\n" +
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		".......V.......\n" , spaceinvaders.toString());
-	}
-   
-
   
-
-   
    @Test
 	public void test_UnNouveauVaisseauPositionneHorsEspaceJeu_DoitLeverUneException() {
 		SpaceInvaders spaceinvaders = new SpaceInvaders(15, 10);
@@ -89,5 +68,26 @@ public class SpaceInvadersTest {
 		}
 			
 	}
-}
+
    
+
+   @Test
+   public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
+   	spaceinvaders.positionnerUnNouveauVaisseau(7,9);
+
+   	spaceinvaders.deplacerVaisseauVersLaDroite();
+   	
+   	assertEquals("" + 
+   	"...............\n" + 
+   	"...............\n" +
+   	"...............\n" + 
+   	"...............\n" + 
+   	"...............\n" + 
+   	"...............\n" + 
+   	"...............\n" + 
+   	"...............\n" + 
+   	"...............\n" + 
+   	"........V......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+   }
+}
+
