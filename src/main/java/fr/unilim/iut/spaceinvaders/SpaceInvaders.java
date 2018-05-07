@@ -2,8 +2,6 @@ package fr.unilim.iut.spaceinvaders;
 
 public class SpaceInvaders {
 
-
-
 	private static final char MARQUE_FIN_DE_LIGNE = '\n';
 	private static final char MARQUE_VIDE = '.';
 	private static final char MARQUE_VAISSEAU = 'V';
