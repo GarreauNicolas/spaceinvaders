@@ -23,6 +23,15 @@ public class Vaisseau {
 		return this.x;
 	}
 
+	public int ordonnee() {
+		return y;
+	}
+
+	public void seDeplacerVersLaGauche() {
+		this.x = this.x - 1 ;
+		
+	}
+
 }
 
 
