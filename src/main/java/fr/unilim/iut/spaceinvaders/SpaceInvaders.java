@@ -19,17 +19,20 @@ public class SpaceInvaders {
 		StringBuilder espaceDeJeu = new StringBuilder();
 		for (int y = 0; y < hauteur; y++) {
 			for (int x = 0; x < longueur; x++) {
-				char marque;
-			    if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
-				      marque='V';
-			    else
-				      marque='.';
-				
-			    espaceDeJeu.append(marque);
+				espaceDeJeu.append(recupererMarqueDeLaPosition(x, y));
 			}
 			espaceDeJeu.append('\n');
 		}
 		return espaceDeJeu.toString();
+	}
+
+	private char recupererMarqueDeLaPosition(int x, int y) {
+		char marque;
+		if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
+		      marque='V';
+		else
+		      marque='.';
+		return marque;
 	}
 
 	private boolean aUnVaisseauQuiOccupeLaPosition(int x, int y) {
