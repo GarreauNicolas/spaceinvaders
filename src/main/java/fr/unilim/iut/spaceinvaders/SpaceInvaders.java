@@ -13,11 +13,11 @@ public class SpaceInvaders {
 		this.hauteur = hauteur;
 	}
 
-	
 
 
-    
-    @Override
+
+
+	@Override
 
 	public String toString() {
 		StringBuilder espaceDeJeu = new StringBuilder();
@@ -43,7 +43,7 @@ public class SpaceInvaders {
 	}
 
 
-	}
+}
 
 
 
