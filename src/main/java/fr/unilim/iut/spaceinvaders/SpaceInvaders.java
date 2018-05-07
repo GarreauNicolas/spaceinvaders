@@ -20,6 +20,10 @@ public class SpaceInvaders {
 
 
 	public String toString() {
+		return recupererEspaceJeuDansChaineASCII();
+	}
+
+	private String recupererEspaceJeuDansChaineASCII() {
 		StringBuilder espaceDeJeu = new StringBuilder();
 		for (int y = 0; y < hauteur; y++) {
 
@@ -56,7 +60,6 @@ public class SpaceInvaders {
 
 	}
 
-//salut
 }
 
 
