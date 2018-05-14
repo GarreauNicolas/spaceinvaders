@@ -32,10 +32,22 @@ public class Vaisseau {
 	}
 
 
-	
-	
-	//verif abscisses
-	
+	//ordonner
+	private boolean estOrdonneeCouverte(int y) {
+		return (ordonnerLaPlusBasse()<=y) && (y<=ordonnerLaPlusHaute());
+	}
+
+	private int ordonnerLaPlusHaute() {
+		return this.y;
+	}
+
+	private int ordonnerLaPlusBasse() {
+		return ordonnerLaPlusHaute()-this.hauteur+1;
+	}
+
+	//abscisse
+
+
 	private boolean estAbscisseCouverte(int x) {
 		return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
 	}
@@ -48,32 +60,24 @@ public class Vaisseau {
 		return this.x+this.longueur-1;
 	}
 	
-	//verif ordonnes
 
-	private int ordonneLaPlusBasse() {
-		return this.y-this.hauteur+1;
-	}
 	
-	public int ordonneLaPlusHaute() {
-		return this.y;
-	}
-	
-	private boolean estOrdonneeCouverte(int y) {
-		return ordonneLaPlusBasse()<=y && y<=ordonneLaPlusHaute();
-	}
-	
-	// deplacer le vaisseau
-	
-	public void seDeplacerVersLaDroite() {
-		this.x = this.x + 1 ;
-	}
+
+
+	//deplacer
 
 	public void seDeplacerVersLaGauche() {
 		this.x = this.x - 1 ;
 
 	}
 
+	
+	public void seDeplacerVersLaDroite() {
+		this.x = this.x + 1 ;
+	}
 
+
+	//positionner
 	public void positionner(int x, int y) {
 		this.x=x;
 		this.y=y;
