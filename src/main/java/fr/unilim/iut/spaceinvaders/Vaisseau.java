@@ -8,8 +8,8 @@ public class Vaisseau {
 	int longueur;
 	int hauteur;
 
-	public Vaisseau(int longuer, int hauteur) {
-		this(longuer , hauteur , 0 ,0 );
+	public Vaisseau(int longueur, int hauteur) {
+		this(longueur , hauteur , 0 ,0 );
 	}
 
 	public Vaisseau(int longueur, int hauteur, int x, int y) {
