@@ -5,12 +5,12 @@ import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 
 public class SpaceInvaders {
 
-	private static final char MARQUE_FIN_DE_LIGNE = '\n';
-	private static final char MARQUE_VIDE = '.';
+	private int longueur;
+	private int hauteur;
+	private Vaisseau vaisseau;
 	private static final char MARQUE_VAISSEAU = 'V';
-	int longueur;
-	int hauteur;
-	Vaisseau vaisseau;
+	private static final char MARQUE_VIDE = '.';
+	private static final char MARQUE_FIN_DE_LIGNE = '\n';
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -50,10 +50,13 @@ public class SpaceInvaders {
 	}
 
 
-	public void deplacerVaisseauVersLaDroite() {
-		if (vaisseau.abscisseLaPlusADroite() < (longueur - 1))
-			vaisseau.seDeplacerVersLaDroite();
-	}
+
+	
+		public void deplacerVaisseauVersLaDroite() {
+			if (vaisseau.abscisseLaPlusADroite() < (longueur - 1))
+				vaisseau.seDeplacerVersLaDroite();
+		}
+
 
 	public void deplacerVaisseauVersLaGauche() {
 		if (vaisseau.abscisseLaPlusAGauche() > 0)
@@ -73,8 +76,12 @@ public class SpaceInvaders {
 		vaisseau.positionner(x, y);
 	}
 
-
 }
+
+
+
+
+
 
 
 
