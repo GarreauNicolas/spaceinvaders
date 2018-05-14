@@ -20,27 +20,45 @@ public class Vaisseau {
 	}
 
 	public boolean occupeLaPosition(int x, int y) {
-		if ((this.x<=x) && (x<=abscisseLaPlusADroite())) 
-			if ((this.y-this.hauteur+1<=y) && (y<=this.y))
+		if (estAbscisseCouverte(x)) 
+			if (estOdonneCouverte(y))
 				return true;
 
 		return false;
 	}
-
-	private int abscisseLaPlusADroite() {
-		return this.x+this.longueur-1;
+	
+	//verif abscisses
+	
+	private boolean estAbscisseCouverte(int x) {
+		return (abscisseLaPlusAGauche()<=x) && (x<=abscisseLaPlusADroite());
 	}
-
-	public void seDeplacerVersLaDroite() {
-		this.x = this.x + 1 ;
-	}
-
+	
 	public int abscisseLaPlusAGauche() {
 		return this.x;
 	}
 
-	public int ordonnee() {
-		return y;
+	public int abscisseLaPlusADroite() {
+		return this.x+this.longueur-1;
+	}
+	
+	//verif ordonnes
+
+	private int ordonneLaPlusBasse() {
+		return this.y-this.hauteur+1;
+	}
+	
+	public int ordonneLaPlusHaute() {
+		return this.y;
+	}
+	
+	private boolean estOdonneCouverte(int y) {
+		return ordonneLaPlusBasse()<=y && y<=ordonneLaPlusHaute();
+	}
+	
+	// deplcer le vaisseau
+	
+	public void seDeplacerVersLaDroite() {
+		this.x = this.x + 1 ;
 	}
 
 	public void seDeplacerVersLaGauche() {
