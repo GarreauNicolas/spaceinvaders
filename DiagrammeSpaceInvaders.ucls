@@ -13,7 +13,7 @@
   </class>  
   <class id="2" language="java" name="fr.unilim.iut.spaceinvaders.Vaisseau" project="spaceinvaders" 
     file="/spaceinvaders/src/main/java/fr/unilim/iut/spaceinvaders/Vaisseau.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="661" y="222"/>    
+    <position height="-1" width="-1" x="649" y="232"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
