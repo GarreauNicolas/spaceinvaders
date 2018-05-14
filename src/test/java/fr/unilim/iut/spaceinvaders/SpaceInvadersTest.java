@@ -147,7 +147,7 @@ public class SpaceInvadersTest {
 
 	@Test
 	public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
-		spaceinvaders.positionnerUnNouveauVaisseau(3,2,7,9);
+		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(7,9));
 		spaceinvaders.deplacerVaisseauVersLaDroite();
 		assertEquals("" + 
 				"...............\n" + 
