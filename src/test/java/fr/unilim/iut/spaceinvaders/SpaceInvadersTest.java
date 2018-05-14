@@ -188,7 +188,7 @@ public class SpaceInvadersTest {
 	}
 
 	 @Test
-	    public void test_VaisseauAvecDimensionAvance_DeplacerVaisseauVersLaDroite() {
+	    public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
 			
 			spaceinvaders.positionnerUnNouveauVaisseau(3,2,7,9);
 			spaceinvaders.deplacerVaisseauVersLaDroite();
