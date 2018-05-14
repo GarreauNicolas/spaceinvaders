@@ -89,6 +89,10 @@ public class SpaceInvadersTest {
 
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://github.com/GarreauNicolas/spaceinvaders.git
 	@Test
 	public void test_VaisseauImmobile_DeplacerVaisseauVersLaDroite() {
 
@@ -188,7 +192,6 @@ public class SpaceInvadersTest {
 	
 	 @Test
 	    public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
-			
 			spaceinvaders.positionnerUnNouveauVaisseau(3,2,7,9);
 			spaceinvaders.deplacerVaisseauVersLaDroite();
 			assertEquals("" + 
