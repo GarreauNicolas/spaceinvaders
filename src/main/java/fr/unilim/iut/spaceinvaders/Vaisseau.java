@@ -33,6 +33,7 @@ public class Vaisseau {
 
 
 	//ordonner
+	
 	private boolean estOrdonneeCouverte(int y) {
 		return (ordonnerLaPlusBasse()<=y) && (y<=ordonnerLaPlusHaute());
 	}
@@ -64,7 +65,8 @@ public class Vaisseau {
 	
 
 
-	//deplacer
+
+	
 
 	public void seDeplacerVersLaGauche() {
 		this.x = this.x - 1 ;
