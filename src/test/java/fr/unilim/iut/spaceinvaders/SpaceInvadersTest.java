@@ -9,13 +9,13 @@ import org.junit.Test;
 import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 
 public class SpaceInvadersTest {
-	
+
 	private SpaceInvaders spaceinvaders;
 
-    @Before
-    public void initialisation() {
-	    spaceinvaders = new SpaceInvaders(15, 10);
-    }
+	@Before
+	public void initialisation() {
+		spaceinvaders = new SpaceInvaders(15, 10);
+	}
 
 
 	@Test
@@ -39,16 +39,16 @@ public class SpaceInvadersTest {
 		SpaceInvaders spaceinvaders = new SpaceInvaders(15, 10);
 		spaceinvaders.positionnerUnNouveauVaisseau(7,9);
 		assertEquals("" + 
-		"...............\n" + 
-		"...............\n" +
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		".......V.......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+				"...............\n" + 
+				"...............\n" +
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				".......V.......\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
 
 	@Test(expected = HorsEspaceJeuException.class)
@@ -164,26 +164,26 @@ public class SpaceInvadersTest {
 				"...............\n" + 
 				"V..............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
+
 	@Test
 	public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {
 		spaceinvaders.positionnerUnNouveauVaisseau(3,2,7,9);
 		assertEquals("" + 
-		"...............\n" + 
-		"...............\n" +
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		"...............\n" + 
-		".......VVV.....\n" + 
-		".......VVV.....\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+				"...............\n" + 
+				"...............\n" +
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				"...............\n" + 
+				".......VVV.....\n" + 
+				".......VVV.....\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
-	
-<<<<<<< HEAD
-	
-}
-=======
+
 
 }
->>>>>>> branch 'master' of https://github.com/GarreauNicolas/spaceinvaders
+
+
+
+
