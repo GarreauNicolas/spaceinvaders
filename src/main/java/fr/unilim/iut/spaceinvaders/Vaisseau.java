@@ -46,7 +46,7 @@ public class Vaisseau {
 		this.x = this.x - 1 ;
 
 	}
-
+//
 }
 
 
