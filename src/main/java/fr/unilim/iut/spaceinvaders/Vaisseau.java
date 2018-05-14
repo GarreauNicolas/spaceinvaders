@@ -23,11 +23,7 @@ public class Vaisseau {
 	}
 
 	public boolean occupeLaPosition(int x, int y) {
-
-		if (estAbscisseCouverte(x)) 
-			if (estOrdonneeCouverte(y))
-				return true;
-
+		
 		return (estAbscisseCouverte(x) && estOrdonneeCouverte(y));
 	}
 
@@ -61,23 +57,16 @@ public class Vaisseau {
 		return this.x+this.longueur-1;
 	}
 	
-
-	
-
-
-
-	
+	//deplacer
 
 	public void seDeplacerVersLaGauche() {
 		this.x = this.x - 1 ;
 
 	}
 
-	
 	public void seDeplacerVersLaDroite() {
 		this.x = this.x + 1 ;
 	}
-
 
 	//positionner
 	public void positionner(int x, int y) {
