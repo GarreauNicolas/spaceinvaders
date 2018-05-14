@@ -75,7 +75,6 @@ public class SpaceInvaders {
 		vaisseau = new Vaisseau(longueur, hauteur);
 		vaisseau.positionner(x, y);
 	}
-sd
 }
 
 
