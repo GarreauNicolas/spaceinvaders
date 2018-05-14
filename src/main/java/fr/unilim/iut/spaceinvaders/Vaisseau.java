@@ -55,7 +55,7 @@ public class Vaisseau {
 		return ordonneLaPlusBasse()<=y && y<=ordonneLaPlusHaute();
 	}
 	
-	// deplcer le vaisseau
+	// deplacer le vaisseau
 	
 	public void seDeplacerVersLaDroite() {
 		this.x = this.x + 1 ;
