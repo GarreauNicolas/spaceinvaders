@@ -24,10 +24,10 @@ public class Vaisseau {
 
 	public boolean occupeLaPosition(int x, int y) {
 		if ((this.x<=x) && (x<=this.x+this.longueur-1)) 
-		      if ((this.y-this.hauteur+1<=y) && (y<=this.y))
-			  return true;
-		
-	     return false;
+			if ((this.y-this.hauteur+1<=y) && (y<=this.y))
+				return true;
+
+		return false;
 	}
 
 	public void seDeplacerVersLaDroite() {
