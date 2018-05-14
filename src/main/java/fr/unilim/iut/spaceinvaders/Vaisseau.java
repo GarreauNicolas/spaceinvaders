@@ -4,10 +4,17 @@ public class Vaisseau {
 
 	int x;
 	int y;
+	int longueur;
+	int hauteur;
 
-	public Vaisseau(int x, int y) {
-		this.x=x;
-		this.y=y;
+
+
+	public Vaisseau(int longueur, int hauteur, int x2, int y2) {
+		this.longueur=longueur;
+		this.hauteur=hauteur;
+		this.x = x;
+		this.y = y;
+
 	}
 	public int abscisse() {
 		return x;
@@ -18,7 +25,11 @@ public class Vaisseau {
 	}
 	
 	public boolean occupeLaPosition(int x, int y) {
-		return (this.x==x) && (this.y==y);
+		if ((this.x<=x) && (x<=this.x+this.longueur-1)) 
+		      if ( (this.y-this.hauteur+1<=y) && (y<=this.y))
+			  return true;
+		
+	     return false;
 	}
 
 	public void seDeplacerVersLaDroite() {
