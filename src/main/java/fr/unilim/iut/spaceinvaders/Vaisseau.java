@@ -4,6 +4,7 @@ public class Vaisseau {
 
 	Position origine;
 	Dimension dimension;
+	private int vitesse; 
 
 
 	//Constructeur
@@ -21,6 +22,7 @@ public class Vaisseau {
 	public Vaisseau(Dimension dimension, Position positionOrigine) {
 		this.dimension = dimension;
 		this.origine = positionOrigine;
+		this.vitesse = 1 ; 
 	}
 	//position
 
@@ -62,12 +64,12 @@ public class Vaisseau {
 	//deplacer
 
 	public void seDeplacerVersLaGauche() {
-		this.origine.changerAbscisse(this.origine.abscisse()-1);
+		this.origine.changerAbscisse(this.origine.abscisse()- vitesse);
 
 	}
 
 	public void seDeplacerVersLaDroite() {
-		this.origine.changerAbscisse(this.origine.abscisse()+1);
+		this.origine.changerAbscisse(this.origine.abscisse()+vitesse);
 	}
 
 	//positionner
