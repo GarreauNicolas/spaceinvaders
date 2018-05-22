@@ -62,7 +62,6 @@ public class SpaceInvadersTest {
 
 		try {
 			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1),new Position(15,9), 1);
-			spaceinvaders.positionnerUnNouveauVaisseau(1,1,15,9);
 			fail("Position trop à droite : devrait déclencher une exception HorsEspaceJeuException");
 		} catch (final HorsEspaceJeuException e) {
 		}
@@ -113,12 +112,11 @@ public class SpaceInvadersTest {
 			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(9,2),new Position(7,9), 1);
 			fail("Dépassement du vaisseau à droite en raison de sa longueur trop importante : devrait déclencher une exception DebordementEspaceJeuException");
 		} catch (final DebordementEspaceJeuException e) {
-		}
+		} 
 
 
 		try {
 			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,4),new Position(7,1), 1);
-			spaceinvaders.positionnerUnNouveauVaisseau(3,4,7,1);
 			fail("Dépassement du vaisseau vers le haut en raison de sa hauteur trop importante : devrait déclencher une exception DebordementEspaceJeuException");
 		} catch (final DebordementEspaceJeuException e) {
 		}
