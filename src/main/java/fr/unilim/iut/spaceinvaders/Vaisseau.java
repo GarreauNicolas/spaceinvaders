@@ -2,8 +2,8 @@ package fr.unilim.iut.spaceinvaders;
 
 public class Vaisseau {
 
-	Position origine;
-	Dimension dimension;
+	private Position origine;
+	private Dimension dimension;
 	private int vitesse; 
 
 
@@ -35,15 +35,15 @@ public class Vaisseau {
 	//ordonner
 
 	private boolean estOrdonneeCouverte(int y) {
-		return (ordonnerLaPlusBasse()<=y) && (y<=ordonnerLaPlusHaute());
+		return (ordonneeLaPlusBasse()<=y) && (y<=ordonneeLaPlusHaute());
 	}
 
-	private int ordonnerLaPlusHaute() {
+	int ordonneeLaPlusHaute() {
 		return this.origine.ordonnee();
 	}
 
-	private int ordonnerLaPlusBasse() {
-		return ordonnerLaPlusHaute()-this.dimension.hauteur()+1;
+	int ordonneeLaPlusBasse() {
+		return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
 	}
 
 	//abscisse
@@ -78,7 +78,10 @@ public class Vaisseau {
 		this.origine.changerOrdonnee(y);
 
 	}
-
+	
+	int longueur() {
+		return dimension.longueur();
+	}
 }
 
 
