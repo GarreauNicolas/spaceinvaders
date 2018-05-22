@@ -38,11 +38,11 @@ public class Vaisseau {
 		return (ordonneeLaPlusBasse()<=y) && (y<=ordonneeLaPlusHaute());
 	}
 
-	int ordonneeLaPlusHaute() {
+	public int ordonneeLaPlusHaute() {
 		return this.origine.ordonnee();
 	}
 
-	int ordonneeLaPlusBasse() {
+	public int ordonneeLaPlusBasse() {
 		return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
 	}
 
@@ -79,7 +79,7 @@ public class Vaisseau {
 
 	}
 	
-	int longueur() {
+	public int longueur() {
 		return dimension.longueur();
 	}
 }
