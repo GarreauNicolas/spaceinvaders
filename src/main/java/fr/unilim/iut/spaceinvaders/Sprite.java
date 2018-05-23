@@ -66,5 +66,9 @@ public abstract class Sprite {
 	public int longueur() {
 		return dimension.longueur();
 	}
+	
+	public int hauteur() {
+		return dimension.hauteur();
+	}
 
 }
