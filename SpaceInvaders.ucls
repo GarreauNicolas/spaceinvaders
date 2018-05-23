@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="fr.unilim.iut.spaceinvaders.Spritr" project="spaceinvaders" 
-    file="/spaceinvaders/src/main/java/fr/unilim/iut/spaceinvaders/Spritr.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="fr.unilim.iut.spaceinvaders.Sprite" project="spaceinvaders" 
+    file="/spaceinvaders/src/main/java/fr/unilim/iut/spaceinvaders/Sprite.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="121" y="210"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

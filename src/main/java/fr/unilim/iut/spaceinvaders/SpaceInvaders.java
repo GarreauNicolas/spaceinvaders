@@ -8,9 +8,7 @@ public class SpaceInvaders {
 	private int longueur;
 	private int hauteur;
 	private Vaisseau vaisseau;
-	private static final char MARQUE_VAISSEAU = 'V';
-	private static final char MARQUE_VIDE = '.';
-	private static final char MARQUE_FIN_DE_LIGNE = '\n';
+	private Missile missile;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -23,18 +21,29 @@ public class SpaceInvaders {
 			for (int x = 0; x < longueur; x++) {
 				espaceDeJeu.append(recupererMarqueDeLaPosition(x, y));
 			}
-			espaceDeJeu.append(MARQUE_FIN_DE_LIGNE);
+			espaceDeJeu.append(Constante.MARQUE_FIN_DE_LIGNE);
 		}
 		return espaceDeJeu.toString();
 	}
 
-	private char recupererMarqueDeLaPosition(int x, int y) {
-		char marque;
-		if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
-			marque=MARQUE_VAISSEAU;
-		else
-			marque=MARQUE_VIDE;
-		return marque;
+	 private char recupererMarqueDeLaPosition(int x, int y) {
+			char marque;
+			if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
+				marque = Constante.MARQUE_VAISSEAU;
+			else if (this.aUnMissileQuiOccupeLaPosition(x, y))
+					marque = Constante.MARQUE_MISSILE;
+			else marque = Constante.MARQUE_VIDE;
+			return marque;
+		}
+
+	private boolean aUnMissileQuiOccupeLaPosition(int x, int y) {
+		
+		return this.aUnMissile() && missile.occupeLaPosition(x, y);
+	}
+	
+	private boolean aUnMissile() {
+		return missile!=null;
+		
 	}
 
 	private boolean aUnVaisseauQuiOccupeLaPosition(int x, int y) {
@@ -87,6 +96,11 @@ public class SpaceInvaders {
 			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
 
 		vaisseau = new Vaisseau(dimension,position,vitesse);
+	}
+	//Missile
+	
+	public void tirerUnMissile(Dimension dimension, int vitesse) {
+		this.missile = this.vaisseau.tirerUnMissile(dimension,vitesse);
 	}
 }
 

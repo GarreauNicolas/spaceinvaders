@@ -12,6 +12,8 @@ public class Constante {
 	public static final char MARQUE_FIN_LIGNE = '\n';
 	public static final char MARQUE_VIDE = '.';
 	public static final char MARQUE_VAISSEAU = 'V';
+	public static final char MARQUE_MISSILE = 'M';
+	public static final char MARQUE_FIN_DE_LIGNE = '\n';
 
 
 }

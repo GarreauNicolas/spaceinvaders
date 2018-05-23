@@ -1,19 +1,21 @@
 package fr.unilim.iut.spaceinvaders;
 
-public abstract class Spritr {
+public abstract class Sprite {
 
 	protected Position origine;
 	protected Dimension dimension;
 	protected int vitesse;
+	
+	//Constructeur 
 
-	public Spritr(Dimension dimension, Position origine, int vitesse) {
+	public Sprite(Dimension dimension, Position origine, int vitesse) {
 		super();
 		this.dimension = dimension;
 		this.origine = origine;
 		this.vitesse = vitesse;
 	}
 
-
+	//Position
 	public boolean occupeLaPosition(int x, int y) {
 		return (estAbscisseCouverte(x) && estOrdonneeCouverte(y));
 	}
@@ -41,7 +43,15 @@ public abstract class Spritr {
 	public int abscisseLaPlusADroite() {
 		return this.origine.abscisse()+this.dimension.longueur()-1;
 	}
+	
+	public void positionner(int x, int y) {
+		this.origine.changerAbscisse(x);
+		this.origine.changerOrdonnee(y);
+	
+	}
 
+	//Deplacement
+	
 	public void seDeplacerVersLaGauche() {
 		this.origine.changerAbscisse(this.origine.abscisse()- vitesse);
 	
@@ -51,11 +61,7 @@ public abstract class Spritr {
 		this.origine.changerAbscisse(this.origine.abscisse()+vitesse);
 	}
 
-	public void positionner(int x, int y) {
-		this.origine.changerAbscisse(x);
-		this.origine.changerOrdonnee(y);
-	
-	}
+	//dimension
 
 	public int longueur() {
 		return dimension.longueur();
