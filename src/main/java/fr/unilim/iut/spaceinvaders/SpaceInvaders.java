@@ -1,9 +1,11 @@
 package fr.unilim.iut.spaceinvaders;
 
+import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
+import fr.unilim.iut.spaceinvaders.moteurjeu.Jeu;
 import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 
-public class SpaceInvaders {
+public class SpaceInvaders implements Jeu{
 
 	private int longueur;
 	private int hauteur;
@@ -104,6 +106,16 @@ public class SpaceInvaders {
 			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
 
 		vaisseau = new Vaisseau(dimension,position,vitesse);
+	}
+
+	public void evoluer(Commande commandeUser) {
+		
+		
+	}
+
+	public boolean etreFini() {
+		
+		return false;
 	}
 }
 
