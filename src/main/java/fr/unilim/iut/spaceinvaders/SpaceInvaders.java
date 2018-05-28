@@ -63,13 +63,6 @@ public class SpaceInvaders implements Jeu{
 
 	}
 
-
-	
-
-
-
-
-
 	public void deplacerVaisseauVersLaDroite() {
 		if (vaisseau.abscisseLaPlusADroite() < (longueur - 1)) {
 			vaisseau.seDeplacerVersLaDroite();
@@ -109,12 +102,16 @@ public class SpaceInvaders implements Jeu{
 
 
 	public void evoluer(Commande commandeUser) {
-		
+		if(commandeUser.droite) {
+			this.deplacerVaisseauVersLaDroite();
+		}
+		if(commandeUser.gauche) {
+			this.deplacerVaisseauVersLaGauche();
+		}
 		
 	}
 
 	public boolean etreFini() {
-		
 		return false;
 	}
 
