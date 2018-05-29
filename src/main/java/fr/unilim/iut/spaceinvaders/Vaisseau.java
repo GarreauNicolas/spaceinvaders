@@ -4,21 +4,15 @@ import fr.unilim.iut.spaceinvaders.utils.MissileException;
 
 public class Vaisseau extends Sprite {
 
-
-
-
 	//Constructeur
 
 	public Vaisseau(Dimension dimension, Position positionOrigine, int vitesse) {
 		super(dimension, positionOrigine, vitesse);
 	}
 
-
-
 	public int ordonneeLaPlusHaute() {
 		return this.origine.ordonnee();
 	}
-
 
 	public Missile tirerUnMissile(Dimension dimensionMissile, int vitesseMissile) {
 		
@@ -32,12 +26,9 @@ public class Vaisseau extends Sprite {
 	}
 
 
-
-
 	public int ordonneeLaPlusBasse() {
 		return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
 	}
-
 
 	private Position calculerLaPositionDeTirDuMissile(Dimension dimensionMissile) {
 		int abscisseMilieuVaisseau = this.abscisseLaPlusAGauche() + (this.longueur() / 2);

@@ -53,7 +53,7 @@ public class SpaceInvaders implements Jeu{
 		return this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y);
 	}
 
-	private boolean aUnVaisseau() {
+	public boolean aUnVaisseau() {
 		return vaisseau!=null;
 	}
 
@@ -71,7 +71,6 @@ public class SpaceInvaders implements Jeu{
 			}
 		}
 	}
-
 
 	public void deplacerVaisseauVersLaGauche() {
 		if (0 < vaisseau.abscisseLaPlusAGauche())
@@ -100,7 +99,6 @@ public class SpaceInvaders implements Jeu{
 		vaisseau = new Vaisseau(dimension,position,vitesse);
 	}
 
-
 	public void evoluer(Commande commandeUser) {
 		if(commandeUser.droite) {
 			this.deplacerVaisseauVersLaDroite();
@@ -110,6 +108,11 @@ public class SpaceInvaders implements Jeu{
 		}
 		
 	}
+
+	public Vaisseau getVaisseau() {
+		return vaisseau;
+	}
+
 
 	public boolean etreFini() {
 		return false;
@@ -125,6 +128,11 @@ public class SpaceInvaders implements Jeu{
 		   this.missile = this.vaisseau.tirerUnMissile(dimensionMissile,vitesseMissile);
     }
 
+	public void initialiser() {
+		this.positionnerUnNouveauVaisseau(Constante.DIMENSION_VAISSEAU_DEBUT,Constante.POSITION_VAISSEAU_DEBUT,Constante.VAISSEAU_VITESSE);
+			
+		
+	}
 }
 
 

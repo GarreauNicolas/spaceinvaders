@@ -2,8 +2,8 @@ package fr.unilim.iut.spaceinvaders;
 
 public class Constante {
 
-	public static final int ESPACEJEU_LONGUEUR = 150;
-	public static final int ESPACEJEU_HAUTEUR = 100;
+	public static final int ESPACEJEU_LONGUEUR = 600;
+	public static final int ESPACEJEU_HAUTEUR = 600;
 
 	public static final int VAISSEAU_LONGUEUR = 30;
 	public static final int VAISSEAU_HAUTEUR = 20;
@@ -14,6 +14,9 @@ public class Constante {
 	public static final char MARQUE_VAISSEAU = 'V';
 	public static final char MARQUE_MISSILE = 'M';
 	public static final char MARQUE_FIN_DE_LIGNE = '\n';
+	
+	public static final Dimension DIMENSION_VAISSEAU_DEBUT= new Dimension(VAISSEAU_LONGUEUR,VAISSEAU_HAUTEUR);
+	public static final Position POSITION_VAISSEAU_DEBUT=new Position(ESPACEJEU_LONGUEUR/2,ESPACEJEU_HAUTEUR-1);
 
 
 }
