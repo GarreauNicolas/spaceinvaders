@@ -1,4 +1,4 @@
-package fr.unilim.iut.spaceinvaders;
+package fr.unilim.iut.spaceinvaders.model;
 
 public abstract class Sprite {
 
@@ -72,10 +72,6 @@ public abstract class Sprite {
 
 	public int hauteur() {
 		return dimension.hauteur();
-	}
-	
-	public Position position() {
-		return origine;
 	}
 
 	//enumeration

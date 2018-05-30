@@ -1,13 +1,6 @@
-package fr.unilim.iut.spaceinvaders;
+package fr.unilim.iut.spaceinvaders.model;
 
-
-
-import fr.unilim.iut.spaceinvaders.model.Constante;
-import fr.unilim.iut.spaceinvaders.model.Dimension;
-import fr.unilim.iut.spaceinvaders.model.Missile;
-import fr.unilim.iut.spaceinvaders.model.Position;
 import fr.unilim.iut.spaceinvaders.model.Sprite.Direction;
-import fr.unilim.iut.spaceinvaders.model.Vaisseau;
 import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
 import fr.unilim.iut.spaceinvaders.moteurjeu.Jeu;
 import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
