@@ -15,7 +15,7 @@ public class Constante {
 	
 	public static final int MISSILE_LONGUEUR = 5;
 	public static final int MISSILE_HAUTEUR = 10;
-	public static final int MISSILE_VITESSE = 5;
+	public static final int MISSILE_VITESSE = 20;
 
 	public static final char MARQUE_FIN_LIGNE = '\n';
 	public static final char MARQUE_VIDE = '.';
@@ -31,7 +31,6 @@ public class Constante {
 	public static final Position POSITION_ENVAHISSSEUR_DEBUT=new Position(ESPACEJEU_LONGUEUR/2,ESPACEJEU_HAUTEUR-(ESPACEJEU_HAUTEUR-ENVAHISSEUR_HAUTEUR));
 	
 	public static final Dimension DIMENSION_MISSILE= new Dimension(MISSILE_LONGUEUR, MISSILE_HAUTEUR);
-	//public static final Position POSITION_MISSILE =new Position(x, y);
 
 	
 }
