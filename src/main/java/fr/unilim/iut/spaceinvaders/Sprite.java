@@ -5,7 +5,7 @@ public abstract class Sprite {
 	protected Position origine;
 	protected Dimension dimension;
 	protected int vitesse;
-	
+
 	//Constructeur 
 
 	public Sprite(Dimension dimension, Position origine, int vitesse) {
@@ -43,22 +43,25 @@ public abstract class Sprite {
 	public int abscisseLaPlusADroite() {
 		return this.origine.abscisse()+this.dimension.longueur()-1;
 	}
-	
+
 	public void positionner(int x, int y) {
 		this.origine.changerAbscisse(x);
 		this.origine.changerOrdonnee(y);
-	
+
 	}
 
 	//Deplacement
-	
-	public void seDeplacerVersLaGauche() {
-		this.origine.changerAbscisse(this.origine.abscisse()- vitesse);
-	
+
+	public void deplacerVersLeHaut() {
+		this.origine.changerOrdonnee(this.origine.ordonnee() - vitesse);
 	}
 
-	public void seDeplacerVersLaDroite() {
-		this.origine.changerAbscisse(this.origine.abscisse()+vitesse);
+	public void deplacerHorizontalementVers(Direction direction) {
+		this.origine.changerAbscisse(this.origine.abscisse() + direction.valeur()*vitesse);
+	}
+
+	public void deplacerVerticalementVers(Direction direction) {
+		this.origine.changerOrdonnee(this.origine.ordonnee() + direction.valeur()*vitesse);
 	}
 
 	//dimension
@@ -66,9 +69,33 @@ public abstract class Sprite {
 	public int longueur() {
 		return dimension.longueur();
 	}
-	
+
 	public int hauteur() {
 		return dimension.hauteur();
+	}
+
+	//enumeration
+
+	public enum Direction {
+
+		HAUT (1),
+		BAS (-1),
+		GAUCHE (-1),
+		DROITE (1),
+
+		HAUT_ECRAN(-1),
+		BAS_ECRAN(1);
+
+		private int valeur;
+
+		private Direction(int valeur) {
+			this.valeur = valeur;
+		}
+
+		public int valeur() {
+			return this.valeur;
+		}
+
 	}
 
 }
