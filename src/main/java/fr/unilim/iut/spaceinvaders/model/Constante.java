@@ -1,4 +1,4 @@
-package fr.unilim.iut.spaceinvaders;
+package fr.unilim.iut.spaceinvaders.model;
 
 public class Constante {
 
@@ -18,6 +18,7 @@ public class Constante {
 	public static final char MARQUE_VAISSEAU = 'V';
 	public static final char MARQUE_MISSILE = 'M';
 	public static final char MARQUE_FIN_DE_LIGNE = '\n';
+	public static final char MARQUE_INVADERS='D';
 	
 	public static final Dimension DIMENSION_VAISSEAU_DEBUT= new Dimension(VAISSEAU_LONGUEUR,VAISSEAU_HAUTEUR);
 	public static final Position POSITION_VAISSEAU_DEBUT=new Position(ESPACEJEU_LONGUEUR/2,ESPACEJEU_HAUTEUR-1);
@@ -25,4 +26,5 @@ public class Constante {
 	public static final Dimension DIMENSION_MISSILE= new Dimension(MISSILE_LONGUEUR, MISSILE_HAUTEUR);
 	//public static final Position POSITION_MISSILE =new Position(x, y);
 
+	
 }
