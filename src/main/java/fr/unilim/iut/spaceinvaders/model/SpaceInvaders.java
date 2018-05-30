@@ -128,6 +128,9 @@ public class SpaceInvaders implements Jeu{
 		return missile;
 	}
 
+	public Envahisseur getEnvahisseur() {
+		return envahisseur;
+	}
 
 	public boolean etreFini() {
 		return false;
@@ -157,7 +160,7 @@ public class SpaceInvaders implements Jeu{
 	// Initialisation
 	public void initialiser() {
 		this.positionnerUnNouveauVaisseau(Constante.DIMENSION_VAISSEAU_DEBUT,Constante.POSITION_VAISSEAU_DEBUT,Constante.VAISSEAU_VITESSE);
-			
+		this.positionnerUnEnvahisseur(Constante.DIMENSION_ENVAHISSEUR_DEBUT,Constante.POSITION_ENVAHISSSEUR_DEBUT,Constante.VAISSEAU_VITESSE);
 		
 	}
 	
@@ -186,10 +189,11 @@ public class SpaceInvaders implements Jeu{
 		return this.aUnEnvahisseur() && envahisseur.occupeLaPosition(x, y);
 	}
 
-	private boolean aUnEnvahisseur() {
+	public boolean aUnEnvahisseur() {
 		return envahisseur!=null;
 
 	}
+	
 }
 
 
