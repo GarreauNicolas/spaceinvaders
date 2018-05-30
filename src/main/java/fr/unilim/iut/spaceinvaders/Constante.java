@@ -5,9 +5,13 @@ public class Constante {
 	public static final int ESPACEJEU_LONGUEUR = 600;
 	public static final int ESPACEJEU_HAUTEUR = 600;
 
-	public static final int VAISSEAU_LONGUEUR = 30;
+	public static final int VAISSEAU_LONGUEUR = 40;
 	public static final int VAISSEAU_HAUTEUR = 20;
-	public static final int VAISSEAU_VITESSE = 5;
+	public static final int VAISSEAU_VITESSE = 10;
+	
+	public static final int MISSILE_LONGUEUR = 5;
+	public static final int MISSILE_HAUTEUR = 10;
+	public static final int MISSILE_VITESSE = 5;
 
 	public static final char MARQUE_FIN_LIGNE = '\n';
 	public static final char MARQUE_VIDE = '.';
@@ -17,6 +21,8 @@ public class Constante {
 	
 	public static final Dimension DIMENSION_VAISSEAU_DEBUT= new Dimension(VAISSEAU_LONGUEUR,VAISSEAU_HAUTEUR);
 	public static final Position POSITION_VAISSEAU_DEBUT=new Position(ESPACEJEU_LONGUEUR/2,ESPACEJEU_HAUTEUR-1);
-
+	
+	public static final Dimension DIMENSION_MISSILE= new Dimension(MISSILE_LONGUEUR, MISSILE_HAUTEUR);
+	//public static final Position POSITION_MISSILE =new Position(x, y);
 
 }
