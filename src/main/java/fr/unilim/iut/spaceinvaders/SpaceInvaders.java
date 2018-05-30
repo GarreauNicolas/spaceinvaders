@@ -103,17 +103,23 @@ public class SpaceInvaders implements Jeu{
 	public void evoluer(Commande commandeUser) {
 		if(commandeUser.droite) {
 			this.deplacerVaisseauVersLaDroite();
+
 		}
 		if(commandeUser.gauche) {
 			this.deplacerVaisseauVersLaGauche();
+
 		}
 		if(commandeUser.tir) {
 			this.tirerUnMissile(Constante.DIMENSION_MISSILE,Constante.MISSILE_VITESSE);
+
 		}
 		if (commandeUser.tir && !this.aUnMissile()) {
 			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
 					Constante.MISSILE_VITESSE);
 		}
+		
+		
+
 
 	}
 
@@ -149,7 +155,7 @@ public class SpaceInvaders implements Jeu{
 	public void deplacerMissile() {
 
 		missile.deplacerVerticalementVers(Direction.HAUT_ECRAN);
-		
+
 		if (missile.ordonneeLaPlusBasse() < 0) {
 			missile= null;
 		}
