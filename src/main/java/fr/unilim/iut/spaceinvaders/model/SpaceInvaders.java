@@ -174,10 +174,10 @@ public class SpaceInvaders implements Jeu{
 		int hauteurEnvahisseur = dimension.hauteur();
 		
 		if (!estDansEspaceJeu(x + longueurEnvahisseur - 1, y))
-			throw new DebordementEspaceJeuException("L'envahisseur déborde de l'espace jeu vers la droite à cause de sa longueur");
-		if (!estDansEspaceJeu(x, y + hauteurEnvahisseur - 1))
-			throw new DebordementEspaceJeuException("L'envahisseur déborde de l'espace jeu vers le haut à cause de sa hauteur");
-
+			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
+		if (!estDansEspaceJeu(x, y - hauteurEnvahisseur + 1))
+			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
+		
 		envahisseur = new Envahisseur(dimension,position,vitesse);
 		
 	}

@@ -7,5 +7,11 @@ public class Envahisseur extends Sprite{
 		
 	}
 
-
+	public int ordonneeLaPlusHaute() {
+		return this.origine.ordonnee();
+	}
+	
+	public int ordonneeLaPlusBasse() {
+		return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
+	}
 }

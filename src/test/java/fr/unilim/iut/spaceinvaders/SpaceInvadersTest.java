@@ -312,7 +312,7 @@ public class SpaceInvadersTest {
 
 	 public void test_aUnEnvahisseurPresentALInitialisation() {
 		 spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7,2),new Position(5,9), 2);
-		 spaceinvaders.positionnerUnEnvahisseur(new Dimension(3,1),new Position(5,2), 2);
+		 spaceinvaders.positionnerUnEnvahisseur(new Dimension(3,1),new Position(5,1), 2);
 		 assertEquals("" + 
 			       "...............\n" + 
 			       ".....DDD.......\n" +
