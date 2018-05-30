@@ -14,6 +14,7 @@ public class SpaceInvaders implements Jeu{
 	private int hauteur;
 	private Vaisseau vaisseau;
 	private Missile missile;
+	private Envahisseur envahisseur;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -37,6 +38,8 @@ public class SpaceInvaders implements Jeu{
 			marque = Constante.MARQUE_VAISSEAU;
 		else if (this.aUnMissileQuiOccupeLaPosition(x, y))
 			marque = Constante.MARQUE_MISSILE;
+		else if (this.aUnEnvahisseurQuiOccupeLaPosition(x, y))
+			marque = Constante.MARQUE_INVADERS;
 		else marque = Constante.MARQUE_VIDE;
 		return marque;
 	}
@@ -118,10 +121,9 @@ public class SpaceInvaders implements Jeu{
 			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
 					Constante.MISSILE_VITESSE);
 		}
-		
-		
 
-
+		if (this.aUnMissile())
+			this.deplacerMissile();
 	}
 
 	public Vaisseau getVaisseau() {
@@ -160,6 +162,34 @@ public class SpaceInvaders implements Jeu{
 		if (missile.ordonneeLaPlusBasse() < 0) {
 			missile= null;
 		}
+
+	}
+
+	public void positionnerUnEnvahisseur(Dimension dimension, Position position, int vitesse) {
+		int x = position.abscisse();
+		int y = position.ordonnee();
+
+		if (!estDansEspaceJeu(x, y))
+			throw new HorsEspaceJeuException("La position de l'envahisseur est en dehors de l'espace jeu");
+
+		int longueurEnvahisseur = dimension.longueur();
+		int hauteurEnvahisseur = dimension.hauteur();
+
+		if (!estDansEspaceJeu(x + longueurEnvahisseur - 1, y))
+			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
+		if (!estDansEspaceJeu(x, y - hauteurEnvahisseur + 1))
+			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
+
+		envahisseur = new Envahisseur(dimension,position,vitesse);
+
+	}
+
+	private boolean aUnEnvahisseurQuiOccupeLaPosition(int x, int y) {
+		return this.aUnEnvahisseur() && envahisseur.occupeLaPosition(x, y);
+	}
+
+	private boolean aUnEnvahisseur() {
+		return envahisseur!=null;
 
 	}
 }
