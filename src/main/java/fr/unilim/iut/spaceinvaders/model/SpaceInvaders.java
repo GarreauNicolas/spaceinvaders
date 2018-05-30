@@ -105,22 +105,18 @@ public class SpaceInvaders implements Jeu{
 	}
 
 	public void evoluer(Commande commandeUser) {
-		if(commandeUser.droite) {
-			this.deplacerVaisseauVersLaDroite();
 
+		if (commandeUser.gauche) {
+			deplacerVaisseauVersLaGauche();
 		}
-		if(commandeUser.gauche) {
-			this.deplacerVaisseauVersLaGauche();
 
+		if (commandeUser.droite) {
+			deplacerVaisseauVersLaDroite();
 		}
-		if(commandeUser.tir) {
-			this.tirerUnMissile(Constante.DIMENSION_MISSILE,Constante.MISSILE_VITESSE);
 
-		}
-		if (commandeUser.tir && !this.aUnMissile()) {
+		if (commandeUser.tir && !this.aUnMissile())
 			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR),
 					Constante.MISSILE_VITESSE);
-		}
 
 		if (this.aUnMissile())
 			this.deplacerMissile();

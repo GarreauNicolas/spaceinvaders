@@ -11,7 +11,7 @@ public class Constante {
 	
 	public static final int MISSILE_LONGUEUR = 5;
 	public static final int MISSILE_HAUTEUR = 10;
-	public static final int MISSILE_VITESSE = 5;
+	public static final int MISSILE_VITESSE = 500;
 
 	public static final char MARQUE_FIN_LIGNE = '\n';
 	public static final char MARQUE_VIDE = '.';
