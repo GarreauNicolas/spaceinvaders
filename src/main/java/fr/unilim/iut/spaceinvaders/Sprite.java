@@ -73,6 +73,10 @@ public abstract class Sprite {
 	public int hauteur() {
 		return dimension.hauteur();
 	}
+	
+	public Position position() {
+		return origine;
+	}
 
 	//enumeration
 
