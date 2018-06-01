@@ -1,6 +1,8 @@
 package fr.unilim.iut.spaceinvaders.model;
 
 
+import java.util.Spliterators.AbstractIntSpliterator;
+
 import fr.unilim.iut.spaceinvaders.model.Sprite.Direction;
 import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
 import fr.unilim.iut.spaceinvaders.moteurjeu.Jeu;
@@ -191,6 +193,36 @@ public class SpaceInvaders implements Jeu{
 	public boolean aUnEnvahisseur() {
 		return envahisseur!=null;
 
+	}
+
+	public void deplacerEnvahisseur() {
+
+		if (envahisseur.sens() == true) {
+			if (0 < envahisseur.abscisseLaPlusAGauche()) {
+				envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
+			}else {
+				envahisseur.nouveauSens(false);
+			}
+			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusHaute())) {
+				envahisseur.positionner(0, envahisseur.ordonneeLaPlusHaute());
+			}
+		}else {
+			if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
+				envahisseur.deplacerHorizontalementVers(Direction.DROITE);
+			}else {
+				envahisseur.nouveauSens(true);
+			}
+			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
+				envahisseur.positionner(longueur - envahisseur.longueur(), envahisseur.ordonneeLaPlusHaute());
+			}
+		}
+		
+
+
+	}
+	
+	public void directionEnvahiseur() {
+		envahisseur.nouveauSens(false);
 	}
 
 }

@@ -10,10 +10,6 @@ public class Vaisseau extends Sprite {
 		super(dimension, positionOrigine, vitesse);
 	}
 
-	public int ordonneeLaPlusHaute() {
-		return this.origine.ordonnee();
-	}
-
 	public Missile tirerUnMissile(Dimension dimensionMissile, int vitesseMissile) {
 		
 		if(dimensionMissile.longueur() > this.longueur()) {
@@ -23,11 +19,6 @@ public class Vaisseau extends Sprite {
 		Position positionOrigineMissile = calculerLaPositionDeTirDuMissile(dimensionMissile);
 		return new Missile(dimensionMissile, positionOrigineMissile, vitesseMissile);
 
-	}
-
-
-	public int ordonneeLaPlusBasse() {
-		return ordonneeLaPlusHaute()-this.dimension.hauteur()+1;
 	}
 
 	private Position calculerLaPositionDeTirDuMissile(Dimension dimensionMissile) {
