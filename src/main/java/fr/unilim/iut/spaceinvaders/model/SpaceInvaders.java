@@ -152,10 +152,6 @@ public class SpaceInvaders implements Jeu{
 		this.positionnerUnNouveauVaisseau(Constante.DIMENSION_VAISSEAU_DEBUT,Constante.POSITION_VAISSEAU_DEBUT,Constante.VAISSEAU_VITESSE);
 
 		this.positionnerUnEnvahisseur(Constante.DIMENSION_ENVAHISSEUR_DEBUT,Constante.POSITION_ENVAHISSSEUR_DEBUT,Constante.VAISSEAU_VITESSE);
-		
-
-
-
 
 	}
 
