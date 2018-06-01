@@ -200,27 +200,35 @@ public class SpaceInvaders implements Jeu{
 	public void deplacerEnvahisseur() {
 
 		if (envahisseur.sens() == true) {
-			if (0 < envahisseur.abscisseLaPlusAGauche()) {
-				envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
-			}else {
-				envahisseur.nouveauSens(false);
-			}
-			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusHaute())) {
-				envahisseur.positionner(0, envahisseur.ordonneeLaPlusHaute());
-			}
+			deplacementAGaucheDeLenvahisseur();
 		}else {
-			if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
-				envahisseur.deplacerHorizontalementVers(Direction.DROITE);
-			}else {
-				envahisseur.nouveauSens(true);
-			}
-			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
-				envahisseur.positionner(longueur - envahisseur.longueur(), envahisseur.ordonneeLaPlusHaute());
-			}
+			deplacementADroiteDeLenvahisseur();
 		}
 		
 
 
+	}
+
+	private void deplacementADroiteDeLenvahisseur() {
+		if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
+			envahisseur.deplacerHorizontalementVers(Direction.DROITE);
+		}else {
+			envahisseur.nouveauSens(true);
+		}
+		if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
+			envahisseur.positionner(longueur - envahisseur.longueur(), envahisseur.ordonneeLaPlusHaute());
+		}
+	}
+
+	private void deplacementAGaucheDeLenvahisseur() {
+		if (0 < envahisseur.abscisseLaPlusAGauche()) {
+			envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
+		}else {
+			envahisseur.nouveauSens(false);
+		}
+		if (!estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusHaute())) {
+			envahisseur.positionner(0, envahisseur.ordonneeLaPlusHaute());
+		}
 	}
 	
 	public void directionEnvahiseur() {
