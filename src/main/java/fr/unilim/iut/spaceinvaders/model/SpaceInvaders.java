@@ -122,6 +122,8 @@ public class SpaceInvaders implements Jeu{
 
 		if (this.aUnMissile())
 			this.deplacerMissile();
+		
+		this.deplacerEnvahisseur();
 	}
 
 	public Vaisseau getVaisseau() {
