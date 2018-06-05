@@ -49,6 +49,10 @@ public abstract class Sprite {
 		this.origine.changerOrdonnee(y);
 
 	}
+	
+	public Position position() {
+		return origine;
+	}
 
 	//Deplacement
 

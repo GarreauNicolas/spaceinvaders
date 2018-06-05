@@ -376,6 +376,36 @@ public class SpaceInvadersTest {
 				       ".....VVVVVVV...\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 		 }
 		 
+		 
+		 @Test
+
+		 public void test_UneColisionEntreUnMissileEtUnEnvahisseur() {
+			 spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7,2),new Position(5,9), 2);
+			 spaceinvaders.positionnerUnEnvahisseur(new Dimension(3,1),new Position(7,1), 2);
+			 spaceinvaders.tirerUnMissile(new Dimension(2,1),2);
+			 
+			 spaceinvaders.deplacerMissile();
+			 spaceinvaders.deplacerMissile();
+			 spaceinvaders.deplacerMissile();
+			 spaceinvaders.deplacerMissile();
+			 
+			 
+			 
+			 assertEquals("" + 
+				       "...............\n" + 
+				       "...............\n" +
+				       "...............\n" + 
+				       "...............\n" + 
+				       "...............\n" + 
+				       "...............\n" + 
+				       "...............\n" + 
+				       "...............\n" + 
+				       ".....VVVVVVV...\n" + 
+				       ".....VVVVVVV...\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
+		 }
+		 
+		 
+		 
 }
 
 
