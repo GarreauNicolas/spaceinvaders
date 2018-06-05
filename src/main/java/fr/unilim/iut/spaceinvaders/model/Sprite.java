@@ -77,6 +77,16 @@ public abstract class Sprite {
 	public int hauteur() {
 		return dimension.hauteur();
 	}
+	
+	//cordonner des sprite
+	
+	public int coindroit() {
+		return this.origine.abscisse();
+		
+	}
+	public int coingauche() {
+		return this.origine.abscisse()-this.longueur();
+	}
 
 	//enumeration
 
