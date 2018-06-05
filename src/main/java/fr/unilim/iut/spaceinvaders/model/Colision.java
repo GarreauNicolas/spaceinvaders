@@ -5,14 +5,13 @@ public class Colision {
 	private Envahisseur envahisseur;
 	private Missile missile;
 	
-	
-	public boolean destruction(Envahisseur envahisseur,Missile missile) {
-		if(missile.coindroit()<=envahisseur.coindroit() || missile.coingauche()>=envahisseur.coingauche()) {
-			if(missile.positionHaute()==envahisseur.positionHaute()) {
-				return true;
+	public void destruction() {
+		if(this.missile.coindroit()<=this.envahisseur.coindroit() && this.missile.coingauche()>=this.envahisseur.coingauche()) {
+			if(this.missile.ordonneeLaPlusBasse()==this.envahisseur.ordonneeLaPlusHaute()) {
+				this.missile=null;
+				this.envahisseur=null;
 			}
 		}
-		return false;
 	}
 
 }

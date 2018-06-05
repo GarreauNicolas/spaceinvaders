@@ -127,8 +127,11 @@ public class SpaceInvaders implements Jeu{
 
 		if(this.aUnEnvahisseur())
 			this.deplacerEnvahisseur();
-	
-	
+		
+		this.destruction();
+
+
+
 	}
 
 	public Vaisseau getVaisseau() {
@@ -171,8 +174,8 @@ public class SpaceInvaders implements Jeu{
 		if (missile.ordonneeLaPlusBasse() < 0) {
 			missile= null;
 		}
-
 	}
+
 
 	public void positionnerUnEnvahisseur(Dimension dimension, Position position, int vitesse) {
 		int x = position.abscisse();
@@ -237,8 +240,17 @@ public class SpaceInvaders implements Jeu{
 		envahisseur.nouveauSens(false);
 	}
 
+	public void destruction() {
+		if(this.missile.coindroit()>=this.envahisseur.coindroit() ) {
+			if(this.missile.coingauche()>=this.envahisseur.coingauche()) {
+				if(this.missile.ordonneeLaPlusBasse()==this.envahisseur.ordonneeLaPlusHaute()) {
+					this.missile=null;
+					this.envahisseur=null;
+				}
+			}
 
-
+		}
+	}
 }
 
 

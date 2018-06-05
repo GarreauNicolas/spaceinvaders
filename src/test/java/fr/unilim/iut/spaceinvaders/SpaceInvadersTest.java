@@ -329,7 +329,7 @@ public class SpaceInvadersTest {
 	   
 		 @Test
 
-		 public void test_UnEnvahisseurNeDepacePasDeLespaceDeJeuxAGauche() {
+		 public void test_UnEnvahisseurNeDepassePasDeLespaceDeJeuxAGauche() {
 			 spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7,2),new Position(5,9), 2);
 			 spaceinvaders.positionnerUnEnvahisseur(new Dimension(3,1),new Position(2,1), 2);
 			 
@@ -351,7 +351,7 @@ public class SpaceInvadersTest {
 		 
 		 @Test
 
-		 public void test_UnEnvahisseurNeDepacePasDeLespaceDeJeuxADroit() {
+		 public void test_UnEnvahisseurNeDepassePasDeLespaceDeJeuxADroit() {
 			 spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7,2),new Position(5,9), 2);
 			 spaceinvaders.positionnerUnEnvahisseur(new Dimension(3,1),new Position(3,1), 2);
 			 spaceinvaders.directionEnvahiseur();
@@ -378,7 +378,6 @@ public class SpaceInvadersTest {
 		 
 		 
 		 @Test
-
 		 public void test_UneColisionEntreUnMissileEtUnEnvahisseur() {
 			 spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(7,2),new Position(5,9), 2);
 			 spaceinvaders.positionnerUnEnvahisseur(new Dimension(3,1),new Position(7,2), 2);
@@ -389,6 +388,7 @@ public class SpaceInvadersTest {
 			 spaceinvaders.deplacerMissile();
 			 spaceinvaders.deplacerMissile();
 			 spaceinvaders.deplacerMissile();
+			 spaceinvaders.destruction();
 			 
 			 assertEquals("" + 
 				       "...............\n" + 

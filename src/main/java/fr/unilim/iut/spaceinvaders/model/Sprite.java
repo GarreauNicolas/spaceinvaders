@@ -88,9 +88,6 @@ public abstract class Sprite {
 		return this.origine.abscisse()-this.longueur();
 	}
 	
-	public int positionHaute() {
-		return this.origine.ordonnee();
-	}
 
 	//enumeration
 
