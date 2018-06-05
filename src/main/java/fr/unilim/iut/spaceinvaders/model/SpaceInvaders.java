@@ -17,6 +17,7 @@ public class SpaceInvaders implements Jeu{
 	private Vaisseau vaisseau;
 	private Missile missile;
 	private Envahisseur envahisseur;
+	private Colision colision;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -48,7 +49,7 @@ public class SpaceInvaders implements Jeu{
 
 	private boolean aUnMissileQuiOccupeLaPosition(int x, int y) {
 		return this.aUnMissile() && missile.occupeLaPosition(x, y);
-		
+
 	}
 
 	public boolean aUnMissile() {
@@ -58,17 +59,17 @@ public class SpaceInvaders implements Jeu{
 
 	private boolean aUnVaisseauQuiOccupeLaPosition(int x, int y) {
 		return this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y);
-		
+
 	}
 
 	public boolean aUnVaisseau() {
 		return vaisseau!=null;
-		
+
 	}
 
 	private boolean estDansEspaceJeu(int x, int y) {
 		return ((x >= 0) && (x < longueur)) && ((y >= 0) && (y < hauteur));
-		
+
 	}
 
 	public void deplacerVaisseauVersLaDroite() {
@@ -124,7 +125,10 @@ public class SpaceInvaders implements Jeu{
 		if (this.aUnMissile())
 			this.deplacerMissile();
 
-		this.deplacerEnvahisseur();
+		if(this.aUnEnvahisseur())
+			this.deplacerEnvahisseur();
+	
+	
 	}
 
 	public Vaisseau getVaisseau() {
@@ -167,8 +171,7 @@ public class SpaceInvaders implements Jeu{
 		if (missile.ordonneeLaPlusBasse() < 0) {
 			missile= null;
 		}
-		
-		
+
 	}
 
 	public void positionnerUnEnvahisseur(Dimension dimension, Position position, int vitesse) {
@@ -206,8 +209,6 @@ public class SpaceInvaders implements Jeu{
 			deplacementADroiteDeLenvahisseur();
 		}
 
-
-
 	}
 
 	private void deplacementADroiteDeLenvahisseur() {
@@ -235,6 +236,8 @@ public class SpaceInvaders implements Jeu{
 	public void directionEnvahiseur() {
 		envahisseur.nouveauSens(false);
 	}
+
+
 
 }
 

@@ -87,6 +87,10 @@ public abstract class Sprite {
 	public int coingauche() {
 		return this.origine.abscisse()-this.longueur();
 	}
+	
+	public int positionHaute() {
+		return this.origine.ordonnee();
+	}
 
 	//enumeration
 
